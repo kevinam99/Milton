@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Milton",
+    "version": "1.0.0",
+
+    "description": "Get the meanings of the words that millenials say straight from the Urabn Dictionary",
+    "homepage_url": "https://github.com/kevinam99/Milton",
+
+    "icons": {
+        "48": "icons/milton-48.png",
+        "96": "icons/milton-96.png"
+    },
+
+    "permissions": [
+        "tabs"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/milton-32.png",
+        "default_title": "Milton",
+        "default_popup": "popup/settings.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_scripts/milton.js"]
+        }
+    ],
+
+    "web_accessible_resources": [
+        "icons/milton-96.png"
+    ]
+}
