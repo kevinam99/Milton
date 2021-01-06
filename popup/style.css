@@ -1,0 +1,21 @@
+html, body {
+    /* background-color: #d39a1f;
+    color: #FFEEEE; */
+    height: 500;
+    width: 300;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.miltonTitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    margin: 10 10 10 10;
+}
+
+.submitBtn {
+    margin: 15 5 5 5;
+}
