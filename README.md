@@ -1,4 +1,4 @@
-![Milton logo](./icons/milton-96.jpg) 
+![Milton logo](./icons/milton-96.png) 
 # Milton 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Follow me on Twitter](https://img.shields.io/twitter/follow/neverloquacious?style=social)](https://twitter.com/neverloquacious)
