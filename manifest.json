@@ -13,13 +13,13 @@
     ],
 
     "icons": {
-        "48": "icons/milton-48.jpg",
-        "96": "icons/milton-96.jpg"
+        "48": "icons/milton-48.png",
+        "96": "icons/milton-96.png"
     },
 
     "browser_action": {
         "default_title": "Milton",
-        "default_icon": "icons/milton-32.jpg",
+        "default_icon": "icons/milton-48.png",
         "default_popup": "popup/index.html"  
     },
 
@@ -28,7 +28,7 @@
     },
 
     "web_accessible_resources": [
-        "icons/milton-96.jpg"
+        "icons/milton-96.png"
     ],
     
     "content_scripts": [
