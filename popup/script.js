@@ -26,7 +26,7 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
                 definitionsRegion.innerHTML = ""
                 response.forEach(defn => {
                     const defnBody = `<p>${defn.definition}\n</p>`
-                    const defnLink = `<a href = ${defn.link} target = "_blank"> View definition on Urban Dictionary </a>`
+                    const defnLink = `<a style = "color: white" href = ${defn.link} target = "_blank"> View definition on Urban Dictionary </a>`
                     definitionsRegion.innerHTML+=`<li>${defnBody}\n${defnLink}</li>\n`;
                 })
             }
