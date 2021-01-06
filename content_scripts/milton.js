@@ -24,8 +24,8 @@
     function showDefinitionOfSelection(info, tab) {
         console.log(info)
         browser.windows.create({
-            "url": `https://www.urbandictionary.com/define.php?term=${info.selectionText.toLowerCase()}`,
-            "type": "popup",
+            "url": `https://www.urbandictionary.com/define.php?term=${info.selectionText}`,
+            // "type": "popup",
             "height": 500,
             "width": 500,
             "left": 200,
@@ -43,18 +43,25 @@
 
     browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log(message, sender)
-        let definitions 
+        let definitions = []
         if( message.action === "getDefinitions" ) {
             let endpoint = `http://api.urbandictionary.com/v0/define?term=${message.word}`
+            console.log(`loading...`)
             fetch(endpoint)
                 .then(response => response.json())
                 .then(data => {
-                    definitions = data
+                    console.log(typeof data)
+                    for(let i = 0; i < 2; i++) {
+                        const definition = data[`list`][i].definition.replace(/[\[\]']+/g,'')
+                        const link = data[`list`][i].permalink
+                        definitions.push({definition: definition, link: link})
+                    }
                     console.log(definitions)
+                    sendResponse(definitions)
                 })
                 .catch(error => console.log(error))
-            
-            sendResponse(definitions)  
+                
+                return true
         }
         
     })

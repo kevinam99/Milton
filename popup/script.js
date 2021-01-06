@@ -1,12 +1,12 @@
 browser = (function() { return  chrome || browser; })();
 
 
-let definitions = []
+let definitionsRegion = document.querySelector("#submitBtn")
 
-
-$(document).on('click', '#submitBtn', (e) => {
+document.querySelector("#submitBtn").addEventListener("click", (e) => {
     e.preventDefault()
     let word = document.querySelector('#word').value
+    // if(word = '')
     console.log(`Sending ${word} to milton.js`);
     browser.runtime.sendMessage({action: "getDefinitions", word: word}, response => {
         console.log(response)
@@ -14,7 +14,7 @@ $(document).on('click', '#submitBtn', (e) => {
         // console.log(`response(script.js) ${response}`)
         // response.map((definition) => {
             
-        //     $('.definitions').append(`<li><p>${definition}</p></li>`);
+        //     $('.definitionsRegion').append(`<li><p>${definition}</p></li>`);
         // })
     })
 })
