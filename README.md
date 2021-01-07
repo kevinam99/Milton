@@ -13,7 +13,7 @@ This project is at the mercy of Urban Dictionary's API which may be deprecated a
 
 
 ### Downloading the extension
-* For Firefox: You can download and install the add-on from Firefox add-ons (I'll add the link once the add-on is public) or you could install it as a temporary add-on. This is how you would have to go about it  
+* For Firefox: You can download and install the add-on from [Firefox add-ons](https://addons.mozilla.org/addon/milton255/) or you could install it as a temporary add-on. This is how you would have to go about it  
 &nbsp;&nbsp;&nbsp;&nbsp;1. Clone the repo.  
 &nbsp;&nbsp;&nbsp;&nbsp;2. Open Firefox and hit the shortcut Ctrl+Shift+A to open the add-ons setting.  
 &nbsp;&nbsp;&nbsp;&nbsp;3. Click on the gear icon and select "Debug add-ons".  
