@@ -13,6 +13,7 @@
     ],
 
     "icons": {
+        "32": "icons/milton-32.png",
         "48": "icons/milton-48.png",
         "96": "icons/milton-96.png"
     },

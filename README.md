@@ -20,7 +20,7 @@ This project is at the mercy of Urban Dictionary's API which may be deprecated a
 &nbsp;&nbsp;&nbsp;&nbsp;4. In the new window that opens, click on "Load Temporary Add-on...", navigate to ```milton/``` and select ```manifest.json```. That's      
 
 
-* For Chrome:  
+* For Chrome and Microsoft Edge:  
 &nbsp;&nbsp;&nbsp;&nbsp;1. Clone the repo.    
 &nbsp;&nbsp;&nbsp;&nbsp;2. Go to [chrome://extensions/](chrome://extensions/) and enable Developer mode.  
 &nbsp;&nbsp;&nbsp;&nbsp;3. Click on Load unpacked and select the folder, ```milton```. Now you're good to go!  
@@ -32,6 +32,11 @@ There are two ways one can use the extension:
 1. Highlight text: Highlight the word of which you want the definition, right click on it and click on 'Find Definition on Urban Dictionary using Milton.' On clicking this option, a new window will open with the Urban Dictionary webpage showing the definitions of the highlighted word.
 
 2. Click on the extension in the browser bar: On clicking the extension, just enter the word you want to search, click on the button that says, "Tell me what this means!" and lo and behold, you'll get the top two definitions within the extension.
+
+Here's a screenshot and a demo  
+<img src = "./demo/milton-screenshot.png" width = "300">  
+  
+<img src = "./demo/milton-video.gif">
 
 I would have put this up on the Chrome webstore but they want me to pay $5 for it and I'm not sure I'd pursue writing browser extensions again. 
 
