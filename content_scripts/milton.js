@@ -22,7 +22,6 @@
      * This method will show the definition of a word in a popup
      */
     function showDefinitionOfSelection(info, tab) {
-        console.log(info)
         browser.windows.create({
             "url": `https://www.urbandictionary.com/define.php?term=${info.selectionText}`,
             // "type": "popup",
@@ -45,15 +44,12 @@
      * response is returned
      */
     browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-        console.log(message, sender)
         let definitions = []
         if( message.action === "getDefinitions" ) {
             let endpoint = `http://api.urbandictionary.com/v0/define?term=${message.word}`
-            console.log(`loading ${message.word}`)
             fetch(endpoint)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     if(data.length == 0) sendResponse([])
                     else {
                         for(let i = 0; i < 2; i++) {
@@ -61,7 +57,6 @@
                             const link = data[`list`][i].permalink
                             definitions.push({definition: definition, link: link})
                         }
-                        console.log(definitions)
                         sendResponse(definitions)
                     }
                 })
