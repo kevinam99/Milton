@@ -12,9 +12,7 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
     else {
         errorMsg.innerHTML = ""
         definitionsRegion.innerHTML = "Getting your definition..."
-        console.log(`Sending ${word} to milton.js`);
         browser.runtime.sendMessage({action: "getDefinitions", word: word}, response => {
-            console.log(response)
             // $('.definitions').html('');
             if(response.length == 0) {
                 definitionsRegion.innerHTML = ""
@@ -22,7 +20,6 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
             } 
 
             else {
-                console.log(response[0])
                 definitionsRegion.innerHTML = ""
                 response.forEach(defn => {
                     const defnBody = `<p>${defn.definition}\n</p>`
