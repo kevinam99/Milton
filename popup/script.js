@@ -3,7 +3,7 @@ browser = (function() { return  chrome || browser; })();
 
 let definitionsRegion = document.querySelector("#definitions")
 let errorMsg = document.querySelector('.error')
-document.getElementById("submitBtn").addEventListener("click", (e) => {
+document.querySelector("#submitBtn").addEventListener("click", (e) => {
     e.preventDefault()
     let word = document.querySelector('#word').value
     definitionsRegion.innerHTML = ""
