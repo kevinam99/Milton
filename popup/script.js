@@ -3,7 +3,7 @@ browser = (function() { return  chrome || browser; })();
 
 let definitionsRegion = document.querySelector("#definitions")
 let errorMsg = document.querySelector('.error')
-document.querySelector("#submitBtn").addEventListener("click", (e) => {
+document.getElementById("submitBtn").addEventListener("click", (e) => {
     e.preventDefault()
     let word = document.querySelector('#word').value
     definitionsRegion.innerHTML = ""
@@ -12,25 +12,23 @@ document.querySelector("#submitBtn").addEventListener("click", (e) => {
     else {
         errorMsg.innerHTML = ""
         definitionsRegion.innerHTML = "Getting your definition..."
-        console.log(`Sending ${word} to milton.js`);
-        browser.runtime.sendMessage({action: "getDefinitions", word: word}, response => {
-            console.log(response)
-            // $('.definitions').html('');
-            if(response.length == 0) {
-                definitionsRegion.innerHTML = ""
-                errorMsg.innerHTML = `${word} does not exist in the Urban Dictionary. Try another word.`
-            } 
+        browser.tabs.query({ active: true, currentWindow: true },function(tabs) {
+            browser.runtime.sendMessage({action: "getDefinitions", word: word}, response => {
+                // $('.definitions').html('');
+                if(response.length == 0) {
+                    definitionsRegion.innerHTML = ""
+                    errorMsg.innerHTML = `${word} does not exist in the Urban Dictionary. Try another word.`
+                } 
 
-            else {
-                console.log(response[0])
-                definitionsRegion.innerHTML = ""
-                response.forEach(defn => {
-                    const defnBody = `<p>${defn.definition}\n</p>`
-                    const defnLink = `<a style = "color: white" href = ${defn.link} target = "_blank"> View definition on Urban Dictionary </a>`
-                    definitionsRegion.innerHTML+=`<li>${defnBody}\n${defnLink}</li>\n`;
-                })
-            }
-            
+                else {
+                    definitionsRegion.innerHTML = ""
+                    response.forEach(defn => {
+                        const defnBody = `<p>${defn.definition}\n</p>`
+                        const defnLink = `<a style = "color: white" href = ${defn.link} target = "_blank"> View definition on Urban Dictionary </a>`
+                        definitionsRegion.innerHTML+=`<li>${defnBody}\n${defnLink}</li>\n`;
+                    })
+                }
+            })
         })
     }
 })
