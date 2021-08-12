@@ -3,6 +3,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Mozilla Add-on](https://img.shields.io/amo/users/milton255)
 ![Mozilla Add-on](https://img.shields.io/amo/dw/milton255)
+![Mozilla Add-on](https://img.shields.io/amo/rating/milton255)
+![Mozilla Add-on](https://img.shields.io/amo/v/milton255)
+![GitHub last commit](https://img.shields.io/github/last-commit/kevinam99/Milton)
+  
 [![Follow me on Twitter](https://img.shields.io/twitter/follow/neverloquacious?style=social)](https://twitter.com/neverloquacious)
 ![Star this repository](https://img.shields.io/github/stars/kevinam99/Milton?style=social)  
 Most people, myself included, have trouble sometimes understanding what kids might be saying these days. So, I decided to come up with this extension that quickly tells me what certain words mean from the [Urban Dictionary](https://www.urbandictionary.com/).
